@@ -3,17 +3,9 @@
 use SimpleXMLElement;
 
 /**
- * @brief Extends EmailVision\Rest\Api with specific methods for the DataMassUpdate API.
+ * @brief The SmartFocus BatchMemberApi
  */
-class DataMassUpdate extends Api {
-
-	/**
-	 * @brief Initialize a new instance of the api.
-	 * @param[in] server the name of the server which hosts the api
-	 */
-	public function __construct($server) {
-		parent::__construct("https://{$server}/apibatchmember/services/rest");
-	}
+class BatchMember extends Service {
 	
 	/**
 	 * @brief Upload a file and merge its content with the current members table
@@ -84,7 +76,7 @@ class DataMassUpdate extends Api {
 		$payload .= base64_encode($file).PHP_EOL;
 		$payload .= $separator.$eol;
 		
-		return new Response($this->client->put("/batchmemberservice/{$this->token}/batchmember/mergeUpload", $payload, array(
+		return new Response($this->client->put($this->base.'/'.$this->api->connect->token().'/batchmember/mergeUpload', $payload, array(
 			'Content-Type: multipart/form-data; boundary='.$boundary,
 		)));
 	}
