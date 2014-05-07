@@ -1,4 +1,4 @@
-<?php namespace Elwinar\Smartfocus;
+<?php namespace Elwinar\Smartfocus\Services;
 
 /**
  * @brief The connect service handle the connection to the SmartFocus APIs and the resulting token to pass to calls.

@@ -1,10 +1,11 @@
-<?php namespace Elwinar\Smartfocus\Api;
+<?php namespace Elwinar\Smartfocus;
 
-use Elwinar\SmartFocus\Api;
+use Elwinar\SmartFocus\Services\ConnectService;
+use Elwinar\SmartFocus\Services\BatchMemberService;
 use SimpleXMLElement;
 
 /**
- * @brief The SmartFocus BatchMemberApi
+ * @brief The SmartFocus BatchMember API
  */
 class BatchMember extends Api {
 
