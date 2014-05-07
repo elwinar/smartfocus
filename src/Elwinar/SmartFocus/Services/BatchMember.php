@@ -1,5 +1,6 @@
-<?php namespace Elwinar\Smartfocus\Services;
+<?php namespace Elwinar\SmartFocus\Services;
 
+use Elwinar\SmartFocus\Service;
 use SimpleXMLElement;
 
 /**

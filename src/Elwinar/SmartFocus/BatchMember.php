@@ -1,7 +1,7 @@
-<?php namespace Elwinar\Smartfocus;
+<?php namespace Elwinar\SmartFocus;
 
-use Elwinar\SmartFocus\Services\ConnectService;
-use Elwinar\SmartFocus\Services\BatchMemberService;
+use Elwinar\SmartFocus\Services\Connect as ConnectService;
+use Elwinar\SmartFocus\Services\BatchMember as BatchMemberService;
 use SimpleXMLElement;
 
 /**

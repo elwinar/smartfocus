@@ -1,9 +1,9 @@
-<?php namespace Elwinar\Smartfocus;
+<?php namespace Elwinar\SmartFocus;
 
 use PestXML;
 
 /**
- * @brief Elwinar\Smartfocus\Api is a generic interface for SmartFocus REST APIs, providing common methods available for each API.
+ * @brief Elwinar\SmartFocus\Api is a generic interface for SmartFocus REST APIs, providing common methods available for each API.
  */
 abstract class Api {
 
@@ -20,6 +20,9 @@ abstract class Api {
 	}
 	
 	public function __get($name) {
+		if(property_exists($this, $name)) {
+			return $this->{$name};
+		}
 		return $this->services[$name];
 	}
 }

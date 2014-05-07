@@ -14,8 +14,8 @@
     },
     "autoload": {
         "psr-0": {
-            "Elwinar\\Smartfocus": "src/"
+            "Elwinar\\SmartFocus\\": "src/"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
