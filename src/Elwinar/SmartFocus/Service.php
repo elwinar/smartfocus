@@ -1,7 +1,7 @@
-<?php namespace Elwinar\Smartfocus;
+<?php namespace Elwinar\SmartFocus;
 
 /**
- * @brief Elwinar\Smartfocus\Service is a generic interface for SmartFocus REST Services, providing common methods available for each Service.
+ * @brief Elwinar\SmartFocus\Service is a generic interface for SmartFocus REST Services, providing common methods available for each Service.
  */
 abstract class Service {
 	
