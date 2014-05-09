@@ -13,6 +13,7 @@ class BatchMember extends Service {
 	 * @param[in] file the content of the file in plain text
 	 * @param[in] parameters an array containing values to configure the API call
 	 * // TODO Complete the parameters description
+	 * @result The job ID if all is well, the error status if not
 	 */
 	public function mergeUpload($file, $parameters = array()) {
 		// TODO Check parameters values before using them
@@ -77,9 +78,13 @@ class BatchMember extends Service {
 		$payload .= base64_encode($file).PHP_EOL;
 		$payload .= $separator.$eol;
 		
-		return new Response($this->client->put($this->base.'/'.$this->api->connect->token().'/batchmember/mergeUpload', $payload, array(
+		$response = $this->api->client->put($this->base.'/'.$this->api->connect->token().'/batchmember/mergeUpload', $payload, array(
 			'Content-Type: multipart/form-data; boundary='.$boundary,
-		)));
+		));
+		if($response['responseStatus'] == 'success') {
+			return intval($response->result);
+		}
+		return $response->status;
 	}
 	
 }
